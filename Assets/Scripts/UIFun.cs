@@ -31,6 +31,14 @@ public class UIFun : MonoBehaviour {
         Debug.Log("关闭");
         Application.Quit();
     }
+    public void SelectMainButton(){
+        SceneManager.LoadScene("SelectPage");
+    }
+    public void SelectButton(int level){
+        string select = "level_"+level;
+        Debug.Log("select "+select);
+        SceneManager.LoadScene(select);
+    }
     public void SettingButton()
     {
         Debug.Log("打开设置");
