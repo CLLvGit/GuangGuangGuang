@@ -27,10 +27,12 @@ public class UIFun : MonoBehaviour {
             FaildMenu.SetActive(false);
         if(WinMenu != null)
             WinMenu.SetActive(false);
-
-        StartRoom = GameManager.gm.StartRoom;
-        MinRoom = GameManager.gm.MinRoom;
-        MaxRoom = GameManager.gm.MaxRoom;
+        if (GameManager.gm != null)
+        {
+            StartRoom = GameManager.gm.StartRoom;
+            MinRoom = GameManager.gm.MinRoom;
+            MaxRoom = GameManager.gm.MaxRoom;
+        }
 
         Room = GameObject.Find("Room");
         RoomNow = StartRoom;
