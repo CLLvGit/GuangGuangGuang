@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// 道具栏相关配置
+/// </summary>
 public class ToolBar : MonoBehaviour {
     private static int MaxToolNum = 4;
     private int ToolNum = 0;
