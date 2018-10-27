@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+
 /// <summary>
 /// 游戏UI初始化 & 流程控制
 /// </summary>
 public class GameManager : MonoBehaviour {
+    public int level_index;
     public static GameManager gm;
     private enum GameState {Playing, Win, Faild };
     private static GameState gamestate = GameState.Playing;
@@ -24,6 +26,7 @@ public class GameManager : MonoBehaviour {
 	public void GameWin()
     {
         gamestate = GameState.Win;
+        levelManager.LevelCleared(level_index);
     }
     public void GameFaild()
     {
