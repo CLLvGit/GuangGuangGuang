@@ -936,9 +936,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 753e864bdd74504419dd231fb9e7f14f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Room: {fileID: 0}
   MoveDistance: 4
-  RoomNum: 7
+  MinRoom: 1
+  StartRoom: 1
+  MaxRoom: 7
+  FaildMenu: {fileID: 0}
+  WinMenu: {fileID: 0}
 --- !u!4 &1392487517
 Transform:
   m_ObjectHideFlags: 0
