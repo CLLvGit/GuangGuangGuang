@@ -47,6 +47,10 @@ public class UIFun : MonoBehaviour {
 	void Update () {
 		
 	}
+    public int GetRoomNum()
+    {
+        return RoomNow;
+    }
     public void ShowFaildMenu()
     {
         FaildMenu.SetActive(true);

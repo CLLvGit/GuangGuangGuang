@@ -11,12 +11,19 @@ public class Bulb_Bad : MonoBehaviour {
     public float MinFlickTime = 1f;
     private float FlickTime;
     private float TimeCount;
+    public  bool Fix = false;
     // Use this for initialization
     void Start () {
         state = false;
         TimeCount = 0;
         FlickTime = Random .Range(MinFlickTime, MaxFlickTime);
         Switch(state);
+    }
+
+    public void Fixed()
+    {
+        Fix = true;
+        Switch(true);
     }
     private void Switch(bool state)
     {
@@ -31,14 +38,17 @@ public class Bulb_Bad : MonoBehaviour {
 
     }
     // Update is called once per frame
-    void Update () {
+    void Update()
+    {
+        if (Fix)
+            return;
         TimeCount += Time.deltaTime;
-		if(TimeCount >= FlickTime)
+        if (TimeCount >= FlickTime)
         {
             TimeCount = 0f;
             state = !state;
             Switch(state);
             FlickTime = Random.Range(MinFlickTime, MaxFlickTime);
         }
-	}
+    }
 }

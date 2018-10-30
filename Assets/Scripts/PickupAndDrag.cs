@@ -10,7 +10,7 @@ public class PickupAndDrag : MonoBehaviour {
     private bool isDraging = false;
     private Vector3 lastMousePosition = Vector3.zero;
     //缩放相关
-    private Vector3 InitScale;
+    public Vector3 InitScale = new Vector3(1f, 1f, 1f);//物体离开道具栏后的缩放系数，需手动调整设置
     public Vector3 ToolBarScale = new Vector3 (1f, 1f, 1f); //物体进入道具栏的缩放系数，需要手动调整设置
     //目标位置
     public static int TargetNum = 1; //物体可以拖入的目标位置的个数
@@ -23,8 +23,8 @@ public class PickupAndDrag : MonoBehaviour {
         Picked = false;
         isDraging = false;
         lastMousePosition = Vector3.zero;
-        this.transform.parent = GameObject.Find("Room").transform;
-        InitScale = this.transform.localScale;
+        //this.transform.parent = GameObject.Find("Room").transform;
+        //InitScale = this.transform.localScale;
         foreach (GameObject target in Target)
             if (target == null)
                 Debug.Log("道具的目标位置未设置");
@@ -55,12 +55,17 @@ public class PickupAndDrag : MonoBehaviour {
             TriggerEnter = false;
         }
     }
+    public void PickThis()
+    {
+        GameObject.Find("ToolBar").GetComponent<ToolBar>().EnterToolBar(this.gameObject, ToolBarScale);
+        Picked = true;
+    }
     private void OnMouseDown()
     {
         //点击时，如果不在道具栏，拾取物品，并设置缩放系数
         if (Picked)
             return;
-        GameObject.Find("ToolBar").GetComponent<ToolBar>().EnterToolBar(this.gameObject, ToolBarScale);
+        PickThis();
     }
 
     private void OnMouseDrag()
