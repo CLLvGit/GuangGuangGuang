@@ -17,7 +17,10 @@ public class UIFun : MonoBehaviour {
 
     public GameObject FaildMenu;
     public GameObject WinMenu;
-
+    //to get and set scroll bar position
+    public RectTransform rtf;
+    //to get a proper offset: cellsize.x + cell.spacing
+    public GridLayoutGroup glg;
     private static int RoomNow;
 	// Use this for initialization
 	void Start () {
@@ -68,6 +71,11 @@ public class UIFun : MonoBehaviour {
         //应该打开选关面板，暂时直接加载第一关
         SceneManager.LoadScene("Level_1");
     }
+
+    public void AchievementButton()
+    {
+        Debug.Log("成就界面");
+    }
     public void CloseButton()
     {
         Debug.Log("关闭");
@@ -107,4 +115,23 @@ public class UIFun : MonoBehaviour {
             RoomNow--;
         }
     }
+    public void SwitchToNext(){
+        Vector3 position = rtf.anchoredPosition3D;
+        Debug.Log("before: "+position);
+        float offset = glg.cellSize.x + glg.spacing.x;
+        if(position[0] <= -offset*(levelManager.level_count-1)) return;
+        else position[0] -= offset;
+        Debug.Log("after: "+position);
+        rtf.anchoredPosition3D = position;
+    }
+    public void SwitchToPrev(){
+        Vector3 position = rtf.anchoredPosition3D;
+        Debug.Log("before: "+position);
+        float offset = glg.cellSize.x + glg.spacing.x;
+        if(position[0] >= 0) return;
+        else position[0] += offset;
+        Debug.Log("after: "+position);
+        rtf.anchoredPosition3D = position;
+    }
+
 }

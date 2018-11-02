@@ -29,6 +29,7 @@ public class Bulb_Bad : MonoBehaviour {
     {
         Bulb_On.SetActive(state);
         Bulb_OFF.SetActive(!state);
+        if(Mask == null) return;
         if (state)
             Mask.SetActive(false);
         else
