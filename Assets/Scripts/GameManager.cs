@@ -23,6 +23,11 @@ public class GameManager : MonoBehaviour {
         gamestate = GameState.Playing;
 
     }
+    public int GetRoomNum()
+    {
+        return UIFun.ui.GetRoomNum();
+
+    }
 	public void GameWin()
     {
         gamestate = GameState.Win;

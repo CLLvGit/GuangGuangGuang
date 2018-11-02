@@ -47,6 +47,10 @@ public class UIFun : MonoBehaviour {
 	void Update () {
 		
 	}
+    public int GetRoomNum()
+    {
+        return RoomNow;
+    }
     public void ShowFaildMenu()
     {
         FaildMenu.SetActive(true);
@@ -59,6 +63,7 @@ public class UIFun : MonoBehaviour {
     }
     public void StartButton()
     {
+        //activate first level
         Debug.Log("开始");
         //应该打开选关面板，暂时直接加载第一关
         SceneManager.LoadScene("Level_1");
