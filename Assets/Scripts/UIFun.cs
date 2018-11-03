@@ -21,6 +21,9 @@ public class UIFun : MonoBehaviour {
     public RectTransform rtf;
     //to get a proper offset: cellsize.x + cell.spacing
     public GridLayoutGroup glg;
+    public int level_chosen;
+    private int progress;
+    private float offset;
     private static int RoomNow;
 	// Use this for initialization
 	void Start () {
@@ -43,7 +46,18 @@ public class UIFun : MonoBehaviour {
         {
             Room.transform.Translate(-MoveDistance, 0, 0);
         }
+        //参数初始化
 		//进行UI初始化设置
+        //默认跳转到当前进度关卡
+        if(glg){
+            offset = glg.cellSize.x + glg.spacing.x;
+            progress = PlayerPrefs.GetInt("progress",1);
+            Debug.Log("level_chosen:"+progress);
+            level_chosen = progress;
+            Vector3 position = rtf.anchoredPosition3D;
+            position[0] -= offset * (level_chosen - 1);
+            rtf.anchoredPosition3D = position;
+        }
 	}
 	
 	// Update is called once per frame
@@ -64,13 +78,13 @@ public class UIFun : MonoBehaviour {
         FaildMenu.SetActive(false);
         WinMenu.SetActive(true);
     }
-    public void StartButton()
+    /* public void StartButton()
     {
         //activate first level
         Debug.Log("开始");
         //应该打开选关面板，暂时直接加载第一关
         SceneManager.LoadScene("Level_1");
-    }
+    }*/
 
     public void AchievementButton()
     {
@@ -81,11 +95,11 @@ public class UIFun : MonoBehaviour {
         Debug.Log("关闭");
         Application.Quit();
     }
-    public void SelectMainButton(){
+    /*public void SelectMainButton(){
         SceneManager.LoadScene("SelectPage");
-    }
-    public void SelectButton(int level){
-        string select = "level_"+level;
+    }*/
+    public void SelectButton(){
+        string select = "level_"+level_chosen;
         Debug.Log("select "+select);
         SceneManager.LoadScene(select);
     }
@@ -117,20 +131,23 @@ public class UIFun : MonoBehaviour {
     }
     public void SwitchToNext(){
         Vector3 position = rtf.anchoredPosition3D;
-        Debug.Log("before: "+position);
-        float offset = glg.cellSize.x + glg.spacing.x;
-        if(position[0] <= -offset*(levelManager.level_count-1)) return;
-        else position[0] -= offset;
-        Debug.Log("after: "+position);
+        //Debug.Log("NEXT before: "+position);
+
+        //display unfinished level but disabled
+        //if(level_chosen == (levelManager.level_count)) return;
+
+        //cannot display level that is unfinished
+        if(level_chosen == progress) return;
+        else position[0] = - ((++level_chosen) - 1) * offset;
+       // Debug.Log("NEXT after: "+position);
         rtf.anchoredPosition3D = position;
     }
     public void SwitchToPrev(){
         Vector3 position = rtf.anchoredPosition3D;
-        Debug.Log("before: "+position);
-        float offset = glg.cellSize.x + glg.spacing.x;
-        if(position[0] >= 0) return;
-        else position[0] += offset;
-        Debug.Log("after: "+position);
+        //Debug.Log("PREV before: "+position);
+        if(level_chosen <= 1) return;
+        else position[0] = - ((--level_chosen) - 1) * offset;
+        //Debug.Log("PREV after: "+position);
         rtf.anchoredPosition3D = position;
     }
 
