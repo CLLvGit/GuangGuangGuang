@@ -28,11 +28,12 @@ public class ToolBar : MonoBehaviour {
         {
             if (ToolBasketNum[i] == 0)
             {
-                tool.transform.localScale = scale;
+                tool.transform.localScale.Set(scale.x,scale.y,scale.z);
                 tool.transform.parent = this.transform;
                 tool.transform.position = ToolBasket[i].transform.position;
                 ToolInToolBar[i] = tool;
                 ToolBasketNum[i] = 1;
+                //Debug.Log(scale + ";" + tool.transform.localScale + ";" + tool.transform.position);
                 return;
             }
             
