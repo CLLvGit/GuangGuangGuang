@@ -83,7 +83,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1086089109551102}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0.048, z: -8}
+  m_LocalPosition: {x: 0.5, y: 1.51, z: -8}
   m_LocalScale: {x: 2.1, y: 1.4, z: 1}
   m_Children: []
   m_Father: {fileID: 4935881350756336}
@@ -109,7 +109,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1972408277844480}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0.048, z: -8}
+  m_LocalPosition: {x: 0.5, y: 1.5, z: -8}
   m_LocalScale: {x: 2.1, y: 1.4, z: 1}
   m_Children: []
   m_Father: {fileID: 4935881350756336}
@@ -170,8 +170,12 @@ MonoBehaviour:
   Bulb_On: {fileID: 1972408277844480}
   Bulb_OFF: {fileID: 1086089109551102}
   Mask: {fileID: 1195566469343824}
-  MaxFlickTime: 1
-  MinFlickTime: 0
+  MaxFlickTime: 0.15
+  MinFlickTime: 0.1
+  MaxPauseTime: 4
+  MinPauseTime: 2
+  FlickCountLimit: 2
+  Fix: 0
 --- !u!212 &212173003193580938
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -204,8 +208,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -130347449
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e0fb8d6503c665946945e057632ae244, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -250,8 +254,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -130347449
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: bd4613908e23bb3408cf9b8e47404624, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -300,7 +304,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 61f0c26b6b975584e8a8f14c06dff741, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.6901961}
+  m_Color: {r: 0.735849, g: 0.735849, b: 0.735849, a: 0.5254902}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

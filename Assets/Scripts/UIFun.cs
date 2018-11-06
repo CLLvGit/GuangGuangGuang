@@ -99,7 +99,7 @@ public class UIFun : MonoBehaviour {
         SceneManager.LoadScene("SelectPage");
     }*/
     public void SelectButton(){
-        string select = "level_"+level_chosen;
+        string select = "Level_"+level_chosen;
         Debug.Log("select "+select);
         SceneManager.LoadScene(select);
     }

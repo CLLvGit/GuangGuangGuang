@@ -38,6 +38,7 @@ public class PickupAndDrag : MonoBehaviour {
     }
     private void OnTriggerEnter2D(Collider2D other) //当物体拖动进入目标位置时设置相关参数
     {
+        Debug.Log("OnTriggerEnter2D");
         foreach (GameObject target in Target )
         {
             if(other.gameObject == target )
@@ -49,6 +50,7 @@ public class PickupAndDrag : MonoBehaviour {
     }
     private void OnTriggerExit2D(Collider2D collision) //当物体脱离目标位置时重置相关参数
     {
+        Debug.Log("OnTriggerExit2D");
         if (collision.gameObject == TriggerTarget)
         {
             TriggerTarget = null;
@@ -57,11 +59,13 @@ public class PickupAndDrag : MonoBehaviour {
     }
     public void PickThis()
     {
+        Debug.Log("PickThis");
         GameObject.Find("ToolBar").GetComponent<ToolBar>().EnterToolBar(this.gameObject, ToolBarScale);
         Picked = true;
     }
     private void OnMouseDown()
     {
+        Debug.Log("OnMouseDown");
         //点击时，如果不在道具栏，拾取物品，并设置缩放系数
         if (Picked)
             return;
@@ -70,6 +74,7 @@ public class PickupAndDrag : MonoBehaviour {
 
     private void OnMouseDrag()
     {
+        Debug.Log("OnMouseDrag");
         //是否拖拽
         isDraging = true;
         if(Picked)
@@ -78,19 +83,22 @@ public class PickupAndDrag : MonoBehaviour {
 
     private void OnMouseUp()
     {
+        Debug.Log("OnMouseUp");
         isDraging = false;
         lastMousePosition = Vector3.zero;
-        if (!Picked)//不再道具栏
+        if (!Picked)//不z在道具栏
         {           
             Picked = true;
         }
         else//已经在道具栏
         {
             //如果进入了目标位置，则停在此处，否在回到道具栏
-            if (TriggerEnter) 
+            if (TriggerEnter && TriggerTarget) 
             {
                 GameObject.Find("ToolBar").GetComponent<ToolBar>().OutToolBar(this.gameObject);
-                this.transform.position =new Vector3 ( TriggerTarget.transform.position.x, TriggerTarget.transform.position.y, -5);              
+                if(TriggerTarget)
+                this.transform.position =new Vector3 ( TriggerTarget.transform.position.x, TriggerTarget.transform.position.y, -5); 
+                else Debug.Log("TriggerTarget == null");             
                 Picked = false;
             }
             else

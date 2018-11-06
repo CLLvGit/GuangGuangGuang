@@ -832,7 +832,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &751503598
 Transform:
   m_ObjectHideFlags: 0
@@ -1188,11 +1188,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 893fa5d2679994c4cb2f612f01fbe583, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bulb_On: {fileID: 751503597}
-  Bulb_OFF: {fileID: 1557590508}
+  Bulb_On: {fileID: 1557590508}
+  Bulb_OFF: {fileID: 751503597}
   Mask: {fileID: 0}
-  MaxFlickTime: 1
-  MinFlickTime: 0
+  MaxFlickTime: 0.12
+  MinFlickTime: 0.1
+  MaxPauseTime: 4
+  MinPauseTime: 3
+  FlickCountLimit: 2
   Fix: 0
 --- !u!1 &1221991198
 GameObject:
@@ -1803,7 +1806,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1557590509
 Transform:
   m_ObjectHideFlags: 0

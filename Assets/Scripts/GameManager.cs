@@ -33,6 +33,18 @@ public class GameManager : MonoBehaviour {
         gamestate = GameState.Win;
         levelManager.LevelCleared(level_index);
     }
+    public void Block(){
+        if(GameObject.Find("LeftButton")&&GameObject.Find("RightButton")){
+            GameObject.Find("LeftButton").SetActive(false);
+            GameObject.Find("RightButton").SetActive(false);
+            }
+    }
+    public void Ready(){
+        if(GameObject.Find("LeftButton")&&GameObject.Find("RightButton")){
+            GameObject.Find("LeftButton").SetActive(true);
+            GameObject.Find("RightButton").SetActive(true);
+            }
+    }
     public void GameFaild()
     {
         gamestate = GameState.Faild;
