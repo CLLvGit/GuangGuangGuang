@@ -43,6 +43,7 @@ public class Bulb : MonoBehaviour {
             {
                 Bulb_OFF.SetActive(false);
                 ChangeSucceed.SetActive(true);
+                GameManager.gm.Block();//stop player from changing room
                 Invoke("Fixed", 1f);
                 Invoke("GameWin", 3f);
             }

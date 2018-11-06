@@ -8,7 +8,7 @@ public class ToolBar : MonoBehaviour {
     private static int MaxToolNum = 4;
     private int ToolNum = 0;
     private static int[] ToolBasketNum = new int [MaxToolNum]; //Length = MaxToolNum
-    public GameObject []ToolBasket = new GameObject [MaxToolNum];
+    public GameObject[] ToolBasket = new GameObject [MaxToolNum];
     private GameObject[] ToolInToolBar = new GameObject[MaxToolNum];
     
 	// Use this for initialization
@@ -28,11 +28,12 @@ public class ToolBar : MonoBehaviour {
         {
             if (ToolBasketNum[i] == 0)
             {
-                tool.transform.localScale = scale;
+                tool.transform.localScale.Set(scale.x,scale.y,scale.z);
                 tool.transform.parent = this.transform;
                 tool.transform.position = ToolBasket[i].transform.position;
                 ToolInToolBar[i] = tool;
                 ToolBasketNum[i] = 1;
+                //Debug.Log(scale + ";" + tool.transform.localScale + ";" + tool.transform.position);
                 return;
             }
             
