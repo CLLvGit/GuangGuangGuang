@@ -17,6 +17,7 @@ public class UIFun : MonoBehaviour {
 
     public GameObject FaildMenu;
     public GameObject WinMenu;
+    public GameObject PauseMenu;
     //to get and set scroll bar position
     public RectTransform rtf;
     //to get a proper offset: cellsize.x + cell.spacing
@@ -31,7 +32,9 @@ public class UIFun : MonoBehaviour {
             ui = this.GetComponent<UIFun>();
         if(FaildMenu != null)
             FaildMenu.SetActive(false);
-        if(WinMenu != null)
+        if (PauseMenu != null)
+            PauseMenu.SetActive(false);
+        if (WinMenu != null)
             WinMenu.SetActive(false);
         if (GameManager.gm != null)
         {
@@ -108,10 +111,38 @@ public class UIFun : MonoBehaviour {
         Debug.Log("打开设置");
         //设置面板待完成
     }
+    public void PauseButton()
+    {
+        Debug.Log("暂停");
+        Time.timeScale = 0f;
+        PauseMenu.SetActive(true);
+    }
+    public void ResumeButton()
+    {
+        Debug.Log("继续");
+        Time.timeScale = 1f;
+        PauseMenu.SetActive(false);
+    }
+    public void RestartButton()
+    {
+        Time.timeScale = 1f;
+        string name = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(name);
+    }
     public void BackButton()
     {
+        Time.timeScale = 1f;
         Debug.Log("返回");
         SceneManager.LoadScene("StartMenu");
+    }
+    public void NextLevelButton()
+    {
+        string name = SceneManager.GetActiveScene().name;
+        string num = name.ToCharArray()[6].ToString();
+        int n = int.Parse(num);
+        n++;
+        Debug.Log(n);
+        SceneManager.LoadScene("Level_" + n);
     }
     public void RightButton()
     {
