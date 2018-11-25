@@ -49,12 +49,18 @@ public class GameManager : MonoBehaviour {
     {
         gamestate = GameState.Faild;
     }
+
 	// Update is called once per frame
 	void Update () {
         if (gamestate == GameState.Faild)
+        {
             UIFun.ui.ShowFaildMenu();
+        }
         else if (gamestate == GameState.Win)
+        {
             UIFun.ui.ShowWinMenu();
+            GameObject.Find("ChangeSprite").GetComponent<ChangeSprite>().SpritesChange();
+        }
 
 	}
 }
