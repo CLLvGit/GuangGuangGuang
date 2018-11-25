@@ -7,6 +7,7 @@ public class ChangeSucceed : MonoBehaviour {
     public GameObject happy;
     private void Happy()
     {
+        GameObject.Find("ChangeSprite").GetComponent<ChangeSprite>().SpritesChange();
         changing.SetActive(false);
         happy.SetActive(true);
     }
@@ -18,6 +19,7 @@ public class ChangeSucceed : MonoBehaviour {
     {
         changing.SetActive(true);
         happy.SetActive(false);
+        
         Invoke("Happy", 1f);
         Invoke("HideThis", 3f);
     }
