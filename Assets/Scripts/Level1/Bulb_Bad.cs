@@ -5,7 +5,6 @@ using UnityEngine;
 public class Bulb_Bad : MonoBehaviour {
     public GameObject Bulb_On;
     public GameObject Bulb_OFF;
-    public GameObject Mask;
     private bool state = true; // true when light is on
     public float MaxFlickTime;
     public float MinFlickTime;
@@ -31,7 +30,6 @@ public class Bulb_Bad : MonoBehaviour {
         Fix = true;
         Bulb_On.SetActive(true);
         Bulb_OFF.SetActive(false);
-        if(Mask) Mask.SetActive(false);
         //Switch();
     }
     private void Switch()

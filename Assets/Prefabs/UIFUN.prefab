@@ -57,3 +57,7 @@ MonoBehaviour:
   MaxRoom: 7
   FaildMenu: {fileID: 0}
   WinMenu: {fileID: 0}
+  PauseMenu: {fileID: 0}
+  rtf: {fileID: 0}
+  glg: {fileID: 0}
+  level_chosen: 0
