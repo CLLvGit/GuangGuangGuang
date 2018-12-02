@@ -4,17 +4,26 @@ using UnityEngine;
 
 public class DropItems : MonoBehaviour {
 	const int ItemCount = 3;
+	public bool DontDisplayItem;
 	public GameObject[] items = new GameObject[ItemCount];
-	private int DropCount = 0;//a item appear everytime player clicks
+	private int DropCount = 0;//an item appear everytime player clicks
 	private bool NeedFreeze = false;//if NeedFreeze == true, none of items can be triggered
 	// Use this for initialization
 	void Start () {
-		//Debug.Log("BookShelf Initialized.");
+		 if(DontDisplayItem){
+			foreach(GameObject item in items){
+				item.SetActive(false);
+			}
+		}
+		
 	}
 	
 	private void OnMouseDown(){
-		if(DropCount<ItemCount)
-		items[DropCount++].SetActive(true);
+		
+		if(DropCount<ItemCount){
+			Debug.Log("OnMouseDown().");
+			items[DropCount++].SetActive(true);
+			}
 	}
 
 	// Update is called once per frame

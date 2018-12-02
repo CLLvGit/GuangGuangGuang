@@ -39,7 +39,7 @@ public class Bulb : MonoBehaviour {
             return;
         if (collision.gameObject == Target_Win)
         {
-            if (GameManager.gm.GetRoomNum() == 1)
+            if (GameManager.gm.GetRoomNum() == 6)
             {
                 Bulb_OFF.SetActive(false);
                 ChangeSucceed.SetActive(true);
