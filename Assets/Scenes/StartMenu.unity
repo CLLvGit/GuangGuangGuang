@@ -302,6 +302,16 @@ MonoBehaviour:
   m_Spacing: {x: 20, y: 0}
   m_Constraint: 2
   m_ConstraintCount: 1
+--- !u!1 &314925749 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1545890344982928, guid: bbf398e8edcac4b4bb3d81f1fde1fea4,
+    type: 2}
+  m_PrefabInternal: {fileID: 484272721}
+--- !u!4 &314925751 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4623281483002282, guid: bbf398e8edcac4b4bb3d81f1fde1fea4,
+    type: 2}
+  m_PrefabInternal: {fileID: 484272721}
 --- !u!1 &369437456
 GameObject:
   m_ObjectHideFlags: 0
@@ -381,6 +391,7 @@ GameObject:
   - component: {fileID: 415213513}
   - component: {fileID: 415213512}
   - component: {fileID: 415213511}
+  - component: {fileID: 415213514}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -446,6 +457,47 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &415213514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 415213510}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42d6fe13627f8cf4c9a74c21e03c54c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 441694678}
+  background: {fileID: 314925749}
+--- !u!1 &441694678
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 441694679}
+  m_Layer: 0
+  m_Name: CameraTarget
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &441694679
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 441694678}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.90000004, y: -2.9, z: -10}
+  m_LocalScale: {x: 2.5, y: 2.5000002, z: 1}
+  m_Children: []
+  m_Father: {fileID: 314925751}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &451959768
@@ -1190,7 +1242,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Bulb_On: {fileID: 1557590508}
   Bulb_OFF: {fileID: 751503597}
-  Mask: {fileID: 0}
   MaxFlickTime: 0.12
   MinFlickTime: 0.1
   MaxPauseTime: 4
@@ -1635,8 +1686,17 @@ MonoBehaviour:
   MinRoom: 1
   StartRoom: 1
   MaxRoom: 7
+  Title: {fileID: 1073957959}
+  UIButtons:
+  - {fileID: 1314902902}
+  - {fileID: 229571905}
+  - {fileID: 1723803020}
+  - {fileID: 653440755}
+  - {fileID: 1696065202}
+  DayButton: {fileID: 451959768}
   FaildMenu: {fileID: 0}
   WinMenu: {fileID: 0}
+  PauseMenu: {fileID: 0}
   rtf: {fileID: 300174190}
   glg: {fileID: 300174192}
   level_chosen: 0
