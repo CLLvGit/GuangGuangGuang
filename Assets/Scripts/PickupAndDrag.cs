@@ -69,7 +69,11 @@ public class PickupAndDrag : MonoBehaviour {
         //点击时，如果不在道具栏，拾取物品，并设置缩放系数
         if (Picked)
             return;
+        //2018/12/09 更改排序层以免被遮挡
+        if(this.GetComponent<SpriteRenderer>())
+            this.GetComponent<SpriteRenderer>().sortingLayerName = "popup";
         PickThis();
+        
     }
 
     private void OnMouseDrag()
