@@ -59,6 +59,7 @@ public class GameManager : MonoBehaviour {
         else if (gamestate == GameState.Win)
         {
             UIFun.ui.ShowWinMenu();
+            if(GameObject.Find("ChangeSprite"))
             GameObject.Find("ChangeSprite").GetComponent<ChangeSprite>().SpritesChange();
         }
 

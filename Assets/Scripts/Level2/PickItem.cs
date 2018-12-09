@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class PickItem : MonoBehaviour {
 	public bool TrueItem;
-	public GameObject Item;
+	public bool EndGame;
+	public float WaitAnimaTime;
+	public float LastAnimaTime;
+	//public GameObject Item;
 	public GameObject Reaction;
 	// Use this for initialization
 	void Start () {
@@ -12,15 +15,17 @@ public class PickItem : MonoBehaviour {
 	}
 	
 	private void OnMouseDown(){
-		Item.GetComponent<SpriteRenderer>().sprite = null;
-		Item.GetComponent<BoxCollider2D>().enabled = false;
+		this.GetComponent<SpriteRenderer>().sprite = null;
+		this.GetComponent<BoxCollider2D>().enabled = false;
+		Invoke("ShowReaction",WaitAnimaTime);
+		if(EndGame){
 		GameManager.gm.Block();
-		Invoke("ShowReaction",1f);
-		Invoke("ItemGetGameClear",3f);
+		Invoke("ItemGetGameClear",LastAnimaTime);}
 	}
 
 	private void ShowReaction(){
 		Reaction.SetActive(true);
+		if(TrueItem) GameObject.Find("GameManager").SendMessage("SpritesChange");
 	}
 
 	private void ItemGetGameClear(){
