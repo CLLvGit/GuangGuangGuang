@@ -13,10 +13,10 @@ public class PickupAndDrag : MonoBehaviour {
     public Vector3 InitScale = new Vector3(1f, 1f, 1f);//物体离开道具栏后的缩放系数，需手动调整设置
     public Vector3 ToolBarScale = new Vector3 (1f, 1f, 1f); //物体进入道具栏的缩放系数，需要手动调整设置
     //目标位置
-    public static int TargetNum = 1; //物体可以拖入的目标位置的个数
-    public GameObject[] Target = new GameObject[TargetNum]; //存储每个目标位置
-    private static GameObject TriggerTarget = null; //当前进入的目标位置
-    private static bool TriggerEnter = false;//是否进入目标位置
+    //public static int TargetNum; //物体可以拖入的目标位置的个数
+    public GameObject[] Target = new GameObject[3]; //存储每个目标位置
+    private GameObject TriggerTarget = null; //当前进入的目标位置
+    private bool TriggerEnter = false;//是否进入目标位置
     
 	// Use this for initialization
 	void Start () {
@@ -81,8 +81,10 @@ public class PickupAndDrag : MonoBehaviour {
         Debug.Log("OnMouseDrag");
         //是否拖拽
         isDraging = true;
-        if(Picked)
+        if (Picked)
+        {           
             this.transform.localScale = InitScale;
+        }
     }
 
     private void OnMouseUp()

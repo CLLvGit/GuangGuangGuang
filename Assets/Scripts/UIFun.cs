@@ -7,7 +7,8 @@ using UnityEngine.SceneManagement;
 /// <summary>
 /// 游戏UI的一些函数
 /// </summary>
-public class UIFun : MonoBehaviour {
+public class UIFun : MonoBehaviour
+{
     public static UIFun ui;
 
     private GameObject Room = null;
@@ -15,6 +16,10 @@ public class UIFun : MonoBehaviour {
     public int MinRoom = 1;
     public int StartRoom = 1;
     public int MaxRoom = 7;
+
+    public GameObject Title;
+    public GameObject[] UIButtons = new GameObject[5];
+    public GameObject DayButton;
 
     public GameObject FaildMenu;
     public GameObject WinMenu;
@@ -27,11 +32,14 @@ public class UIFun : MonoBehaviour {
     private int progress;
     private float offset;
     private static int RoomNow;
-	// Use this for initialization
-	void Start () {
+
+    private static string select;
+    // Use this for initialization
+    void Start()
+    {
         if (ui == null)
             ui = this.GetComponent<UIFun>();
-        if(FaildMenu != null)
+        if (FaildMenu != null)
             FaildMenu.SetActive(false);
         if (PauseMenu != null)
             PauseMenu.SetActive(false);
@@ -46,28 +54,30 @@ public class UIFun : MonoBehaviour {
 
         Room = GameObject.Find("Room");
         RoomNow = StartRoom;
-        for(int i = 1; i < RoomNow; i++)
+        for (int i = 1; i < RoomNow; i++)
         {
             Room.transform.Translate(-MoveDistance, 0, 0);
         }
         //参数初始化
-		//进行UI初始化设置
+        //进行UI初始化设置
         //默认跳转到当前进度关卡
-        if(glg){
+        if (glg)
+        {
             offset = glg.cellSize.x + glg.spacing.x;
-            progress = PlayerPrefs.GetInt("progress",1);
-            Debug.Log("level_chosen:"+progress);
+            progress = PlayerPrefs.GetInt("progress", 1);
+            Debug.Log("level_chosen:" + progress);
             level_chosen = progress;
             Vector3 position = rtf.anchoredPosition3D;
             position[0] -= offset * (level_chosen - 1);
             rtf.anchoredPosition3D = position;
         }
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
     public int GetRoomNum()
     {
         return RoomNow;
@@ -102,9 +112,24 @@ public class UIFun : MonoBehaviour {
     /*public void SelectMainButton(){
         SceneManager.LoadScene("SelectPage");
     }*/
-    public void SelectButton(){
-        string select = "Level_"+level_chosen;
-        Debug.Log("select "+select);
+    public void SelectButton()
+    {
+        select = "Level_" + level_chosen;
+        Debug.Log("select " + select);
+        Title.SetActive(false);
+        for (int i = 0; i < 5; i++)
+            UIButtons[i].SetActive(false);
+        Invoke("BackgroundScale", 2.0f);
+        //SceneManager.LoadScene(select);
+        Invoke("SceneLoad", 5f);
+    }
+    private void BackgroundScale()
+    {
+        DayButton.SetActive(false);
+        GameObject.Find("Main Camera").GetComponent<CameraControl>().enabled = true;
+    }
+    private void SceneLoad()
+    {
         SceneManager.LoadScene(select);
     }
     public void SettingButton()
@@ -161,7 +186,8 @@ public class UIFun : MonoBehaviour {
             RoomNow--;
         }
     }
-    public void SwitchToNext(){
+    public void SwitchToNext()
+    {
         Vector3 position = rtf.anchoredPosition3D;
         //Debug.Log("NEXT before: "+position);
 
@@ -169,16 +195,17 @@ public class UIFun : MonoBehaviour {
         //if(level_chosen == (levelManager.level_count)) return;
 
         //cannot display level that is unfinished
-        if(level_chosen == progress) return;
-        else position[0] = - ((++level_chosen) - 1) * offset;
-       // Debug.Log("NEXT after: "+position);
+        if (level_chosen == progress) return;
+        else position[0] = -((++level_chosen) - 1) * offset;
+        // Debug.Log("NEXT after: "+position);
         rtf.anchoredPosition3D = position;
     }
-    public void SwitchToPrev(){
+    public void SwitchToPrev()
+    {
         Vector3 position = rtf.anchoredPosition3D;
         //Debug.Log("PREV before: "+position);
-        if(level_chosen <= 1) return;
-        else position[0] = - ((--level_chosen) - 1) * offset;
+        if (level_chosen <= 1) return;
+        else position[0] = -((--level_chosen) - 1) * offset;
         //Debug.Log("PREV after: "+position);
         rtf.anchoredPosition3D = position;
     }
