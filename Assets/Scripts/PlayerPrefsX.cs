@@ -46,7 +46,7 @@ public static class PlayerPrefsX
         sb.Append(boolArray[boolArray.Length - 1]);
 
         try { PlayerPrefs.SetString(key, sb.ToString()); }
-        catch (Exception e) { return false; }
+        catch (Exception) { return false; }
         return true;
     }
 
@@ -97,7 +97,7 @@ public static class PlayerPrefsX
         sb.Append(intArray[intArray.Length - 1]);
 
         try { PlayerPrefs.SetString(key, sb.ToString()); }
-        catch (Exception e) { return false; }
+        catch (Exception) { return false; }
         return true;
     }
 
@@ -151,7 +151,7 @@ public static class PlayerPrefsX
         {
             PlayerPrefs.SetString(key, sb.ToString());
         }
-        catch (Exception e)
+        catch (Exception)
         {
             return false;
         }
@@ -200,7 +200,7 @@ public static class PlayerPrefsX
         if (stringArray.Length == 0) return false;
         try
         { PlayerPrefs.SetString(key, String.Join(separator.ToString(), stringArray)); }
-        catch (Exception e)
+        catch (Exception)
         { return false; }
         return true;
     }

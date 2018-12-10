@@ -7,7 +7,7 @@ using UnityEngine;
 /// 用于调整屏幕分辨率
 /// </summary>
 public class CameraSetting : MonoBehaviour {
-    float devHeight = 9.6f;
+    //float devHeight = 9.6f;
     float devWidth = 6.4f;
 
     // Use this for initialization

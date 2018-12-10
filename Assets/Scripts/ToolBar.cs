@@ -6,7 +6,7 @@ using UnityEngine;
 /// </summary>
 public class ToolBar : MonoBehaviour {
     private static int MaxToolNum = 4;
-    private int ToolNum = 0;
+    //private int ToolNum = 0;
     private static int[] ToolBasketNum = new int [MaxToolNum]; //Length = MaxToolNum
     public GameObject[] ToolBasket = new GameObject [MaxToolNum];
     private GameObject[] ToolInToolBar = new GameObject[MaxToolNum];
