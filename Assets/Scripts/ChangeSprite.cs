@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ChangeSprite : MonoBehaviour {
-    public static int Num;
-    public GameObject[] obj = new GameObject[Num];
-    public Sprite[] sprite = new Sprite[Num];
+    public GameObject[] obj = new GameObject[10];
+    public Sprite[] sprite = new Sprite[10];
+
+    private int Num;
 	// Use this for initialization
 	void Start () {
         Num = obj.Length;
