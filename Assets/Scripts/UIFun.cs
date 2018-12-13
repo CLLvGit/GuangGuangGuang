@@ -119,7 +119,7 @@ public class UIFun : MonoBehaviour
         Title.SetActive(false);
         for (int i = 0; i < 5; i++)
             UIButtons[i].SetActive(false);
-        Invoke("BackgroundScale", 2.0f);
+        Invoke("BackgroundScale", 1.5f);
         //SceneManager.LoadScene(select);
         Invoke("SceneLoad", 5f);
     }
