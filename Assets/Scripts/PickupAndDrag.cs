@@ -63,6 +63,14 @@ public class PickupAndDrag : MonoBehaviour {
         GameObject.Find("ToolBar").GetComponent<ToolBar>().EnterToolBar(this.gameObject, ToolBarScale);
         Picked = true;
     }
+    public void PickByOtherScript() //用于别的物体直接捡起该物体时调用
+    {
+        //因为有bug，暂时使用下面暴力的方法实现
+        OnMouseDown();
+        OnMouseUp();
+        Invoke("OnMouseDrag", 0.1f);
+        Invoke("OnMouseUp", 0.2f);
+    }
     private void OnMouseDown()
     {
         Debug.Log("OnMouseDown");
