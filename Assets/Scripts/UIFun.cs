@@ -24,6 +24,7 @@ public class UIFun : MonoBehaviour
     public GameObject FaildMenu;
     public GameObject WinMenu;
     public GameObject PauseMenu;
+    public GameObject AchievementMenu;
     //to get and set scroll bar position
     public RectTransform rtf;
     //to get a proper offset: cellsize.x + cell.spacing
@@ -103,6 +104,11 @@ public class UIFun : MonoBehaviour
     public void AchievementButton()
     {
         Debug.Log("成就界面");
+        AchievementMenu.SetActive(true);
+    }
+    public void CloseAchevement()
+    {
+        AchievementMenu.SetActive(false);
     }
     public void CloseButton()
     {

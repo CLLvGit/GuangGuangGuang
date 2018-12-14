@@ -42,6 +42,7 @@ public class PotTriggerEvent : MonoBehaviour {
     private void GreateFire()
     {
         greate_fire.SetActive(true);
+        GameObject.Find("ChangeSprite").GetComponent<ChangeSprite>().SpritesChange();
         Invoke("GameWin", 2);
     }
     private void GetOil()
@@ -65,6 +66,7 @@ public class PotTriggerEvent : MonoBehaviour {
         {
             GetCock();
             Debug.Log("触发成就：炸鸡");
+            GameManager.gm.UnlockAchievement(3);
         }
         else if (collision.gameObject == water_tool)
         {

@@ -75,7 +75,10 @@ public class ClickToShakeChopstick : MonoBehaviour {
             magicstick.GetComponent<PickupAndDrag>().PickByOtherScript();
             //成就：欧皇
             if (ShakeTimes == 1)
+            {
                 Debug.Log("成就达成：欧皇");
+                GameManager.gm.UnlockAchievement(6);
+            }
         }
         else//获得筷子
         {
@@ -93,6 +96,7 @@ public class ClickToShakeChopstick : MonoBehaviour {
             if (ChopsticksNum >= 3)
             {
                 Debug.Log("成就达成: 非酋");
+                GameManager.gm.UnlockAchievement(5);
                 ChopsticksNum = 0;
             }
         }

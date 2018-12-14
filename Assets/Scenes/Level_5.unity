@@ -3043,6 +3043,12 @@ Prefab:
       propertyPath: level_index
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114137500901952336, guid: 7645f9258cf9dae4f9dbdb9ec1c776fd,
+        type: 2}
+      propertyPath: AchieveObj
+      value: 
+      objectReference: {fileID: 1727020775411236, guid: 69f2bdae9ee099642a124d7af3ceeca4,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7645f9258cf9dae4f9dbdb9ec1c776fd, type: 2}
   m_IsPrefabAsset: 0
