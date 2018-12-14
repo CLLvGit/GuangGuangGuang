@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour {
     public int StartRoom = 1;
     public int MinRoom = 1;
     public int MaxRoom = 7;
+    public GameObject AchieveObj;
 	// Use this for initialization
 	void Start () {
         if(gm == null)
@@ -32,6 +33,21 @@ public class GameManager : MonoBehaviour {
     {
         gamestate = GameState.Win;
         levelManager.LevelCleared(level_index);
+    }
+    public void UnlockAchievement(int num)
+    {
+        string AchieveName;
+        AchieveName = "Achieve_" + num;
+       
+        if (PlayerPrefs.GetInt(AchieveName) != 1)
+        {
+            Debug.Log("解锁成就" + num);
+            PlayerPrefs.SetInt(AchieveName, 1);
+            if (AchieveObj == null)
+                Debug.Log("成就显示物体未设置！");
+            GameObject achieveobj = GameObject.Instantiate(AchieveObj, new Vector3(0, 2.65f, 0), new Quaternion());
+            achieveobj.GetComponent<SetSprite>().ChangeSprite(num - 1);
+        }
     }
     public void Block(){
         if(GameObject.Find("LeftButton")&&GameObject.Find("RightButton")){
