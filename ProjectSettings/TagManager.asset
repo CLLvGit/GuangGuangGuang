@@ -13,7 +13,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Tool
   - 
   - 
   - 
@@ -49,6 +49,9 @@ TagManager:
     locked: 0
   - name: character
     uniqueID: 6362223
+    locked: 0
+  - name: frontground
+    uniqueID: 1518772171
     locked: 0
   - name: popup
     uniqueID: 2750183765

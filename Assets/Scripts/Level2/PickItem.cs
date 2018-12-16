@@ -25,7 +25,7 @@ public class PickItem : MonoBehaviour {
 
 	private void ShowReaction(){
 		Reaction.SetActive(true);
-		if(TrueItem) GameObject.Find("GameManager").SendMessage("SpritesChange");
+		if(TrueItem && EndGame) GameObject.Find("GameManager").SendMessage("SpritesChange");
 	}
 
 	private void ItemGetGameClear(){
