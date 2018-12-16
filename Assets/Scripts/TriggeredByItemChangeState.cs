@@ -1,12 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TriggeredByItemChangeState : MonoBehaviour {
 	public static int StateCount;
 	public float WaitAnimaTime;
 	private int TriggerState;
 	private Collider2D InteratedCollider;
+	//-----------------成就用-----------------//
+	public GameObject AchievementObject;
+	public string SystemAnnoucement;
+	public GameObject SystemMessageBox;
+	//-----------------成就用-----------------//
     public GameObject[] NeedItem = new GameObject[StateCount];
     public GameObject[] IntoState = new GameObject[StateCount];
 	//会有这么一种情况：当一个角色离开这个场景时几个道具变成可交互的。
@@ -38,6 +44,14 @@ public class TriggeredByItemChangeState : MonoBehaviour {
 				Invoke("HideAndRevealed",WaitAnimaTime);
 				break;
 			}
+		}
+		//触发成就4，把switch给老妈的成就
+		if(AchievementObject && AchievementObject.GetComponent<BoxCollider2D>() == other){
+			GameManager.gm.UnlockAchievement(4);
+			GameObject.Find("GameManager").SendMessage("SetFailed");
+			other.gameObject.SetActive(false);
+			SystemMessageBox.GetComponent<Text>().text = SystemAnnoucement;
+			SystemMessageBox.SendMessage("Display");
 		}
 	}
 	private void HideAndRevealed(){

@@ -1963,6 +1963,7 @@ GameObject:
   - component: {fileID: 765503342}
   - component: {fileID: 765503341}
   - component: {fileID: 765503340}
+  - component: {fileID: 765503344}
   m_Layer: 0
   m_Name: Bulb
   m_TagString: Untagged
@@ -2091,6 +2092,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.92076194, y: 0.83}
   m_EdgeRadius: 0
+--- !u!114 &765503344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 765503338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 209095b347ede83479ca4181bc568ec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AchievementNum: 2
 --- !u!1 &780290125
 GameObject:
   m_ObjectHideFlags: 0

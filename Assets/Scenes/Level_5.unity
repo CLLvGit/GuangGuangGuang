@@ -938,6 +938,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WaitAnimaTime: 1.5
+  AchievementObject: {fileID: 0}
+  SystemAnnoucement: 
+  SystemMessageBox: {fileID: 0}
   NeedItem:
   - {fileID: 1277951475}
   IntoState:
@@ -2885,6 +2888,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WaitAnimaTime: 1.5
+  AchievementObject: {fileID: 0}
+  SystemAnnoucement: 
+  SystemMessageBox: {fileID: 0}
   NeedItem:
   - {fileID: 1913588717}
   IntoState:
@@ -4521,6 +4527,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WaitAnimaTime: 1.5
+  AchievementObject: {fileID: 1913588717}
+  SystemAnnoucement: "\u4FFA\u5BFB\u601D\u6361\u5230NS\u4E5F\u4E0D\u4F1A\u4EA4\u7ED9\u8001\u5988\u554A"
+  SystemMessageBox: {fileID: 225317488}
   NeedItem:
   - {fileID: 785282923}
   IntoState:

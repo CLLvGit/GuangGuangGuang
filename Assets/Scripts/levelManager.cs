@@ -85,6 +85,11 @@ public class levelManager : MonoBehaviour {
 		Debug.Log("ResetProgress.");
         int progress = 1;
         PlayerPrefs.SetInt("progress",progress);
+		//2018.12.16 重置成就部分
+		for(int num = 1; num < 7; num++){
+			string AchieveName = "Achieve_" + num;
+			PlayerPrefs.SetInt(AchieveName, 0);
+		}
 	}
 	
 	// Update is called once per frame
