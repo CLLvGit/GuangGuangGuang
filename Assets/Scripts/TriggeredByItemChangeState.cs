@@ -9,6 +9,9 @@ public class TriggeredByItemChangeState : MonoBehaviour {
 	private Collider2D InteratedCollider;
     public GameObject[] NeedItem = new GameObject[StateCount];
     public GameObject[] IntoState = new GameObject[StateCount];
+	//会有这么一种情况：当一个角色离开这个场景时几个道具变成可交互的。
+	//现在只实现了一个道具变成可交互
+	public GameObject[] UnlockItem = new GameObject[StateCount];
 	// Use this for initialization
 	void Start () {
 		if(!this.GetComponent<BoxCollider2D>()){
@@ -30,6 +33,7 @@ public class TriggeredByItemChangeState : MonoBehaviour {
 			if(NeedItem[i].GetComponent<BoxCollider2D>() == other){
 				// Debug.Log("trigger state:" + NeedItem[i].name);
 				TriggerState = i; 
+				if(UnlockItem[i]) UnlockItem[i].SendMessage("Unlocked");
 				InteratedCollider = other;
 				Invoke("HideAndRevealed",WaitAnimaTime);
 				break;
