@@ -41,12 +41,12 @@ GameObject:
   - component: {fileID: 114038233544132306}
   - component: {fileID: 114461401975309608}
   m_Layer: 5
-  m_Name: NoticeLightBulb
+  m_Name: SystemMessageBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &114038233544132306
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -73,13 +73,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u574F\u4E86\u7684\u706F\u6CE1"
+  m_Text: ThisIsATestExample
 --- !u!114 &114461401975309608
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -91,8 +91,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07dde03f1c35f6c40837f03a3d60443f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pausetime: 4
-  fadetime: 1
+  DisplayOn: 0
+  pausetime: 3
+  fadetime: 0.5
 --- !u!114 &114711977483258002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -191,6 +192,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 25, y: -91}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 1.38, y: -95.4}
+  m_SizeDelta: {x: 243.68, y: 33.38}
   m_Pivot: {x: 0.5, y: 0.5}
