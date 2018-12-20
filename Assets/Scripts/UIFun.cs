@@ -33,6 +33,7 @@ public class UIFun : MonoBehaviour
     private int progress;
     private float offset;
     private static int RoomNow;
+    private int maxlevel = 6;
 
     private static string select;
     // Use this for initialization
@@ -68,6 +69,7 @@ public class UIFun : MonoBehaviour
             progress = PlayerPrefs.GetInt("progress", 1);
             Debug.Log("level_chosen:" + progress);
             level_chosen = progress;
+            //2018/12/20 ADD CHOOSE LEVEL LIMIT
             Vector3 position = rtf.anchoredPosition3D;
             position[0] -= offset * (level_chosen - 1);
             rtf.anchoredPosition3D = position;
@@ -174,7 +176,7 @@ public class UIFun : MonoBehaviour
         int n = int.Parse(num);
         n++;
         Debug.Log(n);
-        SceneManager.LoadScene("Level_" + n);
+        if(n<=maxlevel) SceneManager.LoadScene("Level_" + n);
     }
     public void RightButton()
     {
@@ -201,6 +203,8 @@ public class UIFun : MonoBehaviour
         //if(level_chosen == (levelManager.level_count)) return;
 
         //cannot display level that is unfinished
+        //2018/12/20 ADD CHOOSE LEVEL LIMIT
+
         if (level_chosen == progress) return;
         else position[0] = -((++level_chosen) - 1) * offset;
         // Debug.Log("NEXT after: "+position);

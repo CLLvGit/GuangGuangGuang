@@ -33,8 +33,10 @@ public class levelManager : MonoBehaviour {
 	public const int level_count = 9; //ATTENTION NEED TO BE UPDATE MANUALLY
     //----------------------------------------------------------------------
 	static public List<level> LevelList = new List<level>{};//loaed level message
+	static private int level_max;
 	
 	void Start () {
+		level_max = 6;
         //load progress from playerprefs
         //all information loaded into LevelList
         int progress = PlayerPrefs.GetInt("progress",1);
@@ -71,6 +73,7 @@ public class levelManager : MonoBehaviour {
             //FOR DEBUG: level progress monitor
 			//Debug.Log(LevelList[i].GetIndex() + LevelList[i].HasEntry().ToString());
 		}
+		if(progress > level_max) progress = level_max; 
 		PlayerPrefs.SetInt("progress",progress);
 	}
 
