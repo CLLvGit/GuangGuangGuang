@@ -116,8 +116,14 @@ public class ClickToShakeChopstick : MonoBehaviour {
             return;
         }
         if (!shaking)
+        {
             Shake();
+            this.GetComponent<AudioSource>().Play();
+        }
         else
+        {
             GetTool();
+            this.GetComponent<AudioSource>().Stop();
+        }
     }
 }

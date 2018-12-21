@@ -1361,6 +1361,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TrueItem: 0
   EndGame: 0
+  WaitAnimaTime: 0
+  LastAnimaTime: 0
   Reaction: {fileID: 0}
 --- !u!114 &114353127540981574
 MonoBehaviour:
@@ -1389,6 +1391,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ef3db4aebe40a74586f34e638bc9109, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CantRepeat: 0
+  Locked: 0
+  LockedAnnoucement: 
+  SystemMessageBox: {fileID: 0}
   states:
   - {fileID: 1655637535316476}
   - {fileID: 1097741587619048}
@@ -1405,6 +1411,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TrueItem: 0
   EndGame: 1
+  WaitAnimaTime: 0
+  LastAnimaTime: 0
   Reaction: {fileID: 1614179643772778}
 --- !u!114 &114640733213243452
 MonoBehaviour:
@@ -1419,6 +1427,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TrueItem: 1
   EndGame: 1
+  WaitAnimaTime: 0
+  LastAnimaTime: 0
   Reaction: {fileID: 1836566895900282}
 --- !u!114 &114804826797238416
 MonoBehaviour:
@@ -1433,6 +1443,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TrueItem: 0
   EndGame: 1
+  WaitAnimaTime: 0
+  LastAnimaTime: 0
   Reaction: {fileID: 1205140238773928}
 --- !u!114 &114932822185401414
 MonoBehaviour:
@@ -1460,6 +1472,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ef3db4aebe40a74586f34e638bc9109, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CantRepeat: 0
+  Locked: 0
+  LockedAnnoucement: 
+  SystemMessageBox: {fileID: 0}
   states:
   - {fileID: 1695633813993940}
   - {fileID: 1962869904145046}

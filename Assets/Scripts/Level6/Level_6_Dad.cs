@@ -20,6 +20,7 @@ public class Level_6_Dad : MonoBehaviour {
 	public void GetTool()
     {
         ToolsGot++;
+        this.GetComponent<AudioSource>().Play();
         Debug.Log("ToolsGot = " + ToolsGot);
         if (ToolsGot == 3)
         {
