@@ -2565,6 +2565,10 @@ MonoBehaviour:
   WinMenu: {fileID: 0}
   PauseMenu: {fileID: 0}
   AchievementMenu: {fileID: 779129830}
+  left_button: {fileID: 0}
+  right_button: {fileID: 0}
+  PrevButton: {fileID: 653440755}
+  NextButton: {fileID: 1696065202}
   rtf: {fileID: 300174190}
   glg: {fileID: 300174192}
   level_chosen: 0
@@ -2994,7 +2998,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: 
 --- !u!222 &1689367998
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3325,7 +3329,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: 
 --- !u!222 &1721376229
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3545,7 +3549,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: 
 --- !u!222 &1789534608
 CanvasRenderer:
   m_ObjectHideFlags: 0
