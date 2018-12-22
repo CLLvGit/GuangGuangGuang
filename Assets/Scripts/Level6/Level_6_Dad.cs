@@ -9,7 +9,18 @@ public class Level_6_Dad : MonoBehaviour {
 
     private int ToolsGot;
     private bool GotChopstick;
+    public float WaitGameWinTime;
+    public float WaitDoMagicTime;
 	// Use this for initialization
+    IEnumerator WaitGameWin() {
+		yield return new WaitForSeconds(WaitGameWinTime);
+        GameWin();
+	}
+    IEnumerator WaitDoMagic() {
+		yield return new WaitForSeconds(WaitDoMagicTime);
+        DoMagic();
+	}
+
 	void Start () {
         ToolsGot = 0;
         GotChopstick = false;
@@ -28,8 +39,10 @@ public class Level_6_Dad : MonoBehaviour {
             if (chopstick)
                 Destroy(chopstick);
             Debug.Log("Win!!!!");
-            Invoke("DoMagic", 0.5f);
-            Invoke("GameWin", 3.5f);
+            //Invoke("DoMagic", 0.5f);
+            StartCoroutine("WaitDoMagic");
+            StartCoroutine("WaitGameWin");
+            //Invoke("GameWin", 6.5f);
         }
     }
     public void GetChopstick()
@@ -51,7 +64,7 @@ public class Level_6_Dad : MonoBehaviour {
         if (magicstick)
             Destroy(magicstick);
 
-        GameObject.Find("ChangeSprite").GetComponent<ChangeSprite>().SpritesChange();
+        
         dadInit.SetActive(false);
         dadMagic.SetActive(true);
     }
@@ -66,6 +79,7 @@ public class Level_6_Dad : MonoBehaviour {
     }
     private void GameWin()
     {
+        GameObject.Find("ChangeSprite").GetComponent<ChangeSprite>().SpritesChange();
         GameManager.gm.GameWin();
     }
     private void GameFaild()

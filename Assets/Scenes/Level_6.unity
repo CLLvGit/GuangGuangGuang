@@ -240,6 +240,7 @@ MonoBehaviour:
   ToolBarScale: {x: 1, y: 1, z: 1}
   Target:
   - {fileID: 981749415}
+  TriggerEnter: 0
 --- !u!212 &79625779
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -828,6 +829,7 @@ GameObject:
   m_Component:
   - component: {fileID: 190974487}
   - component: {fileID: 190974488}
+  - component: {fileID: 190974489}
   m_Layer: 0
   m_Name: light_3
   m_TagString: Untagged
@@ -894,6 +896,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &190974489
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 190974486}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a46c00d12954d064da15fb9b4bc60fef, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &221337008
 Prefab:
   m_ObjectHideFlags: 0
@@ -1909,7 +1929,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 506380639}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 893fa5d2679994c4cb2f612f01fbe583, type: 3}
   m_Name: 
@@ -2026,7 +2046,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c19dec3dd31a62e44bf5c6c0a01e8d52, type: 3}
+  m_audioClip: {fileID: 8300000, guid: e0bda510acab8e84289ea99ae29213e5, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -3041,6 +3061,7 @@ MonoBehaviour:
   ToolBarScale: {x: 1, y: 1, z: 1}
   Target:
   - {fileID: 981749415}
+  TriggerEnter: 0
 --- !u!212 &919258733
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4738,6 +4759,8 @@ MonoBehaviour:
   dadInit: {fileID: 920546483}
   dadMagic: {fileID: 506380639}
   dadWhat: {fileID: 764981085}
+  WaitGameWinTime: 3
+  WaitDoMagicTime: 0.5
 --- !u!82 &1248796230
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5107,6 +5130,7 @@ MonoBehaviour:
   ToolBarScale: {x: 1, y: 1, z: 1}
   Target:
   - {fileID: 781601114}
+  TriggerEnter: 0
 --- !u!114 &1292109722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7033,6 +7057,7 @@ MonoBehaviour:
   ToolBarScale: {x: 1, y: 1, z: 1}
   Target:
   - {fileID: 1143240447}
+  TriggerEnter: 0
 --- !u!212 &2141736724
 SpriteRenderer:
   m_ObjectHideFlags: 0
