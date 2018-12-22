@@ -25,7 +25,7 @@ public class Car : MonoBehaviour {
 
     public void Park_Car()
     {
-        Debug.Log("------------------------------------Parked.");
+        //Debug.Log("------------------------------------Parked.");
         parked = true;
     }
 	
@@ -33,7 +33,7 @@ public class Car : MonoBehaviour {
 	void Update () {
         if (parked)
         {
-            Debug.Log("The car is parked.");
+            //Debug.Log("The car is parked.");
             return;
         }
         Car_position = Moving_car.transform.position;
