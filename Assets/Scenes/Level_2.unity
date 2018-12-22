@@ -939,7 +939,7 @@ MonoBehaviour:
   TrueItem: 1
   EndGame: 1
   WaitAnimaTime: 0.5
-  LastAnimaTime: 2.5
+  LastAnimaTime: 4
   Reaction: {fileID: 780290125}
 --- !u!212 &359400546
 SpriteRenderer:
@@ -1588,7 +1588,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 565316822}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.096, y: 0.267, z: 0}
+  m_LocalPosition: {x: -0.958, y: 0.252, z: 0}
   m_LocalScale: {x: 0.13836107, y: 0.13836107, z: 0.13836107}
   m_Children: []
   m_Father: {fileID: 780290126}

@@ -10,7 +10,7 @@ using UnityEngine;
 //失败条件SetFailed() 是直接拿来让其他脚本调用的
 
 public class GameClearCheck : MonoBehaviour {
-	//public GameObject GameClearObject = null;
+	public GameObject GameClearObject;
 	public float WaitTillClear = 2f;
 
 	IEnumerator SetGameState(string StateName) {
@@ -37,6 +37,6 @@ public class GameClearCheck : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		//if(GameClearObject.activeSelf) GameClear();
+		if(GameClearObject.activeSelf) GameClear();
 	}
 }
