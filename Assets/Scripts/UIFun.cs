@@ -25,6 +25,10 @@ public class UIFun : MonoBehaviour
     public GameObject WinMenu;
     public GameObject PauseMenu;
     public GameObject AchievementMenu;
+    public GameObject left_button;
+    public GameObject right_button;
+    public GameObject PrevButton;
+    public GameObject NextButton;
     //to get and set scroll bar position
     public RectTransform rtf;
     //to get a proper offset: cellsize.x + cell.spacing
@@ -73,6 +77,17 @@ public class UIFun : MonoBehaviour
             Vector3 position = rtf.anchoredPosition3D;
             position[0] -= offset * (level_chosen - 1);
             rtf.anchoredPosition3D = position;
+        }
+        if(left_button && right_button){
+        if(RoomNow == MinRoom){
+            left_button.SetActive(false);
+        }
+        else if (RoomNow == MaxRoom){
+            right_button.SetActive(false);
+        }}
+        if(PrevButton && NextButton){
+            NextButton.SetActive(false);
+            if(level_chosen == 1) PrevButton.SetActive(false);
         }
     }
 
@@ -167,6 +182,7 @@ public class UIFun : MonoBehaviour
     {
         Time.timeScale = 1f;
         Debug.Log("返回");
+        Destroy(GameObject.Find("BGM"));
         SceneManager.LoadScene("StartMenu");
     }
     public void NextLevelButton()
@@ -185,6 +201,10 @@ public class UIFun : MonoBehaviour
             Room.transform.Translate(-MoveDistance, 0, 0);
             RoomNow++;
         }
+        if(RoomNow == MaxRoom){
+            right_button.SetActive(false);
+        }
+        left_button.SetActive(true);
     }
     public void LeftButton()
     {
@@ -193,6 +213,10 @@ public class UIFun : MonoBehaviour
             Room.transform.Translate(MoveDistance, 0, 0);
             RoomNow--;
         }
+        if(RoomNow == MinRoom){
+            left_button.SetActive(false);
+        }
+        right_button.SetActive(true);
     }
     public void SwitchToNext()
     {
@@ -203,12 +227,13 @@ public class UIFun : MonoBehaviour
         //if(level_chosen == (levelManager.level_count)) return;
 
         //cannot display level that is unfinished
-        //2018/12/20 ADD CHOOSE LEVEL LIMIT
 
         if (level_chosen == progress) return;
         else position[0] = -((++level_chosen) - 1) * offset;
         // Debug.Log("NEXT after: "+position);
         rtf.anchoredPosition3D = position;
+        if (level_chosen == progress) NextButton.SetActive(false);
+        PrevButton.SetActive(true);
     }
     public void SwitchToPrev()
     {
@@ -218,6 +243,8 @@ public class UIFun : MonoBehaviour
         else position[0] = -((--level_chosen) - 1) * offset;
         //Debug.Log("PREV after: "+position);
         rtf.anchoredPosition3D = position;
+        if (level_chosen <= 1) PrevButton.SetActive(false);
+        NextButton.SetActive(true);
     }
 
 }

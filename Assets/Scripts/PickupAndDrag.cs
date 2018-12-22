@@ -16,7 +16,7 @@ public class PickupAndDrag : MonoBehaviour {
     //public static int TargetNum; //物体可以拖入的目标位置的个数
     public GameObject[] Target = new GameObject[3]; //存储每个目标位置
     private GameObject TriggerTarget = null; //当前进入的目标位置
-    private bool TriggerEnter = false;//是否进入目标位置
+    public bool TriggerEnter = false;//是否进入目标位置
     
 	// Use this for initialization
 	void Start () {
@@ -86,7 +86,7 @@ public class PickupAndDrag : MonoBehaviour {
 
     private void OnMouseDrag()
     {
-        Debug.Log("OnMouseDrag");
+        //Debug.Log("OnMouseDrag");
         //是否拖拽
         isDraging = true;
         if (Picked)
