@@ -86,7 +86,7 @@ public class PickupAndDrag : MonoBehaviour {
 
     private void OnMouseDrag()
     {
-        Debug.Log("OnMouseDrag");
+        //Debug.Log("OnMouseDrag");
         //是否拖拽
         isDraging = true;
         if (Picked)
