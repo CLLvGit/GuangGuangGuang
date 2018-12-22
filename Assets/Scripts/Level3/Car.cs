@@ -21,11 +21,14 @@ public class Car : MonoBehaviour {
         End_position = End_point.transform.position;
         delta_x = (End_position.x - Start_position.x) / 400;
         delta_y = (End_position.y - Start_position.y) / 400;
+        this.GetComponent<AudioSource>().Play();
 	}
 
     public void Park_Car()
     {
         //Debug.Log("------------------------------------Parked.");
+        this.GetComponent<AudioSource>().Stop();
+        GameObject.Find("horn").GetComponent<AudioSource>().Play();
         parked = true;
     }
 	
@@ -53,6 +56,7 @@ public class Car : MonoBehaviour {
                 if (interval < 0)
                 {
                     Moving_car.transform.position = Start_position;
+                    Moving_car.GetComponent<AudioSource>().Play();
                     is_moving = true;
                 }
             }
