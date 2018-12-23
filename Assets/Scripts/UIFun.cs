@@ -79,7 +79,13 @@ public class UIFun : MonoBehaviour
             rtf.anchoredPosition3D = position;
         }
         if(left_button && right_button){
-        if(RoomNow == MinRoom){
+            string name = SceneManager.GetActiveScene().name;
+            if (name == "Level_3_outdoor")
+            {
+                right_button.SetActive(false);
+                left_button.SetActive(false);
+            }
+            else if (RoomNow == MinRoom){
             left_button.SetActive(false);
         }
         else if (RoomNow == MaxRoom){

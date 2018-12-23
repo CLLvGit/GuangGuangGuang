@@ -21,14 +21,26 @@ public class Open_Close : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         if (StartStates == State.Open)
+        {
             Switch(false);
+            if(CupBoard_Open.GetComponent<AudioSource>() != null)
+                CupBoard_Open.GetComponent<AudioSource>().enabled = false;
+        }
         else
+        {
             Switch(true);
+            if (CupBoard_Close.GetComponent<AudioSource>() != null)
+                CupBoard_Close.GetComponent<AudioSource>().enabled = false;
+        }
     }
     
     private void OnMouseDown()
     {
-        if(Open)
+        if (CupBoard_Open.GetComponent<AudioSource>() != null)
+            CupBoard_Open.GetComponent<AudioSource>().enabled = true;
+        if (CupBoard_Close.GetComponent<AudioSource>() != null)
+            CupBoard_Close.GetComponent<AudioSource>().enabled = true;
+        if (Open)
         {
             Switch(false);
         }

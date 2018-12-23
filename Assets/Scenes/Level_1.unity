@@ -549,6 +549,48 @@ MonoBehaviour:
   CupBoard_Open: {fileID: 1721706101}
   CupBoard_Close: {fileID: 496730148}
   StartStates: 1
+--- !u!1001 &350035280
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4131662240421528, guid: 21fcb315f15b60849a0b119742df46b6, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 12.932
+      objectReference: {fileID: 0}
+    - target: {fileID: 4131662240421528, guid: 21fcb315f15b60849a0b119742df46b6, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.1295
+      objectReference: {fileID: 0}
+    - target: {fileID: 4131662240421528, guid: 21fcb315f15b60849a0b119742df46b6, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4131662240421528, guid: 21fcb315f15b60849a0b119742df46b6, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4131662240421528, guid: 21fcb315f15b60849a0b119742df46b6, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4131662240421528, guid: 21fcb315f15b60849a0b119742df46b6, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4131662240421528, guid: 21fcb315f15b60849a0b119742df46b6, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4131662240421528, guid: 21fcb315f15b60849a0b119742df46b6, type: 2}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 21fcb315f15b60849a0b119742df46b6, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &496730148
 GameObject:
   m_ObjectHideFlags: 0
@@ -634,10 +676,10 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 496730148}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 2a317394a145c214ba72d64f21c91d64, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 641c58bec0d14b14bb1471ef27f530e5, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
@@ -1017,7 +1059,8 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114996306210262166, guid: 700e5bdf2b59f134d99a43f7625e626d, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 700e5bdf2b59f134d99a43f7625e626d, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &809239189
@@ -1194,10 +1237,10 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 988671442}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7983f4e7184f6f94ebe72508149e46cb, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 641c58bec0d14b14bb1471ef27f530e5, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
@@ -2031,7 +2074,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 2fca32f957eecd0479e4f1575a0f072c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 39b335774cf97d3419bcfa35daf6f14a, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
@@ -2117,6 +2160,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1614927313 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1478210940434574, guid: 700e5bdf2b59f134d99a43f7625e626d,
+    type: 2}
+  m_PrefabInternal: {fileID: 729105517}
+--- !u!114 &1614927314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1614927313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18fc221e91326bb46b0790739dee0856, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Bulb: {fileID: 0}
+  CupBoard_Open: {fileID: 1521230440}
+  CupBoard_Close: {fileID: 988671442}
+  StartStates: 1
 --- !u!1 &1673680385
 GameObject:
   m_ObjectHideFlags: 0
@@ -2361,7 +2424,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 9ffc05762a1548641bc21fcdc01f1af6, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 39b335774cf97d3419bcfa35daf6f14a, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
