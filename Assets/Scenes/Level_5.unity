@@ -4720,9 +4720,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WaitAnimaTime: 1.5
-  optional_AchievementObject: {fileID: 0}
-  optional_SystemAnnoucement: 
-  optional_SystemMessageBox: {fileID: 0}
+  optional_AchievementObject: {fileID: 1913588717}
+  optional_SystemAnnoucement: "\u8001\u5988\u6B23\u6170\u5730\u6536\u4E0B\u4E86\u4F60\u7684NS"
+  optional_SystemMessageBox: {fileID: 225317488}
   NeedItem:
   - {fileID: 785282923}
   IntoState:
