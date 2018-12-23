@@ -14,6 +14,8 @@ public class GameOverByItem : MonoBehaviour {
 	}
 
 	private void OnTriggerEnter2D(Collider2D other){
+		if(GameObject.Find("OnSofaPlay"))
+			GameObject.Find("OnSofaPlay").GetComponent<TriggeredByItemChangeState>().enabled=false;
 		Debug.Log("<GameOverByItem.cs>: " + this.name + " Activated");
 		if(target_item.GetComponent<BoxCollider2D>() == other){
 			GameObject.Find("GameManager").SendMessage("SetFailed");

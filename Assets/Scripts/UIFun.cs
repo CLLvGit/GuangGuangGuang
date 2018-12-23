@@ -115,6 +115,9 @@ public class UIFun : MonoBehaviour
     {
         FaildMenu.SetActive(false);
         WinMenu.SetActive(true);
+        //no level 7
+        if(GameManager.gm.level_index == 6 && GameObject.Find("Next")) 
+            GameObject.Find("Next").SetActive(false);
     }
     /* public void StartButton()
     {
@@ -182,6 +185,7 @@ public class UIFun : MonoBehaviour
     {
         Time.timeScale = 1f;
         string name = SceneManager.GetActiveScene().name;
+        name = name.Substring(0, 7);
         SceneManager.LoadScene(name);
     }
     public void BackButton()
