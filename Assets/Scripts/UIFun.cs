@@ -109,6 +109,9 @@ public class UIFun : MonoBehaviour
     {
         FaildMenu.SetActive(false);
         WinMenu.SetActive(true);
+        //no level 7
+        if(GameManager.gm.level_index == 6 && GameObject.Find("Next")) 
+            GameObject.Find("Next").SetActive(false);
     }
     /* public void StartButton()
     {

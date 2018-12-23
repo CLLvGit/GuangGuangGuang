@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour {
     public int level_index;
     public static GameManager gm;
     private enum GameState {Playing, Win, Faild };
+    private bool StateLock = false;
     private static GameState gamestate = GameState.Playing;
     public int StartRoom = 1;
     public int MinRoom = 1;
@@ -31,7 +32,8 @@ public class GameManager : MonoBehaviour {
     }
 	public void GameWin()
     {
-        gamestate = GameState.Win;
+        if(!StateLock) gamestate = GameState.Win;
+        StateLock = true;
         levelManager.LevelCleared(level_index);
     }
     public void UnlockAchievement(int num)
@@ -63,9 +65,9 @@ public class GameManager : MonoBehaviour {
     }
     public void GameFaild()
     {
-        gamestate = GameState.Faild;
+        if(!StateLock) gamestate = GameState.Faild;
+        StateLock = true;
     }
-
 	// Update is called once per frame
 	void Update () {
         if (gamestate == GameState.Faild)

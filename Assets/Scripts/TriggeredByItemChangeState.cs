@@ -9,9 +9,9 @@ public class TriggeredByItemChangeState : MonoBehaviour {
 	private int TriggerState;
 	private Collider2D InteratedCollider;
 	//-----------------成就用-----------------//
-	public GameObject AchievementObject;
-	public string SystemAnnoucement;
-	public GameObject SystemMessageBox;
+	public GameObject optional_AchievementObject;
+	public string optional_SystemAnnoucement;
+	public GameObject optional_SystemMessageBox;
 	//-----------------成就用-----------------//
     public GameObject[] NeedItem = new GameObject[StateCount];
     public GameObject[] IntoState = new GameObject[StateCount];
@@ -48,12 +48,16 @@ public class TriggeredByItemChangeState : MonoBehaviour {
 			}
 		}
 		//触发成就4，把switch给老妈的成就
-		if(AchievementObject && AchievementObject.GetComponent<BoxCollider2D>() == other){
+		if(optional_AchievementObject && optional_AchievementObject.GetComponent<BoxCollider2D>() == other){
 			GameManager.gm.UnlockAchievement(4);
 			GameObject.Find("GameManager").SendMessage("SetFailed");
 			other.gameObject.SetActive(false);
-			SystemMessageBox.GetComponent<Text>().text = SystemAnnoucement;
-			SystemMessageBox.SendMessage("Display");
+			optional_SystemMessageBox.GetComponent<Text>().text = optional_SystemAnnoucement;
+			optional_SystemMessageBox.SendMessage("Display");
+		}
+		//老妈状态切换触发，则锁上老爸的碰撞区防止同时出触发
+		if(this.name == "OnSofaPlay"){
+			GameObject.Find("SofaPlaying").GetComponent<BoxCollider2D>().enabled = false;
 		}
 	}
 	private void HideAndRevealed(){
