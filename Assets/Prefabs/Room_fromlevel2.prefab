@@ -1417,6 +1417,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ef3db4aebe40a74586f34e638bc9109, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CantRepeat: 0
+  Locked: 0
+  LockedAnnoucement: 
+  SystemMessageBox: {fileID: 0}
   states:
   - {fileID: 1829419412290314}
   - {fileID: 1751716958210112}
@@ -1479,6 +1483,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ef3db4aebe40a74586f34e638bc9109, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CantRepeat: 0
+  Locked: 0
+  LockedAnnoucement: 
+  SystemMessageBox: {fileID: 0}
   states:
   - {fileID: 1225603548931924}
   - {fileID: 1737201950158550}
@@ -1543,6 +1551,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ef3db4aebe40a74586f34e638bc9109, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CantRepeat: 0
+  Locked: 0
+  LockedAnnoucement: 
+  SystemMessageBox: {fileID: 0}
   states:
   - {fileID: 1779539444352368}
   - {fileID: 1798207668341332}
