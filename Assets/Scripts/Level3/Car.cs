@@ -49,7 +49,7 @@ public class Car : MonoBehaviour {
         {
             if (is_moving)
             {
-                interval = Random.Range(5f, 10f);
+                interval = Random.Range(3f, 7f);
                 is_moving = false;
             }
             else

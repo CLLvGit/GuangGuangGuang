@@ -9,7 +9,7 @@ public class ToolBar : MonoBehaviour {
     //private int ToolNum = 0;
     private static int[] ToolBasketNum = new int [MaxToolNum]; //Length = MaxToolNum
     public GameObject[] ToolBasket = new GameObject [MaxToolNum];
-    private GameObject[] ToolInToolBar = new GameObject[MaxToolNum];
+    public GameObject[] ToolInToolBar = new GameObject[MaxToolNum];
     
 	// Use this for initialization
 	void Start () {

@@ -38,7 +38,8 @@ public class Trigger : MonoBehaviour {
         Debug.Log("Car get in-------------------------");
         if (collision.gameObject.name == "car")
             can_place = false;
-        //this.GetComponent<PickupAndDrag>().TriggerEnter = false;
+        if (this.GetComponent<PickupAndDrag>() != null)
+            this.GetComponent<PickupAndDrag>().TriggerEnter = false;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -46,7 +47,8 @@ public class Trigger : MonoBehaviour {
         Debug.Log("Car get out------------------------");
         if (collision.gameObject.name == "car")
             can_place = true;
-        //this.GetComponent<PickupAndDrag>().TriggerEnter = true;
+        if (this.GetComponent<PickupAndDrag>() != null)
+            this.GetComponent<PickupAndDrag>().TriggerEnter = true;
     }
 
     void Level_finished()
