@@ -66,7 +66,7 @@ public class ClickToShakeChopstick : MonoBehaviour {
             GotMagicstick = true;
             ChangeChopsticks(!GotMagicstick);
             ChopstickNow = ChopstickWithoutMagic;
-            ChopsticksNum = 0;
+            ChopsticksNum = -10;
             //提示
             notice.SetActive(true);
             notice.GetComponent<GetToolsNotice>().ChangeText("摇出了一根魔杖");
