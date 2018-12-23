@@ -55,3 +55,4 @@ MonoBehaviour:
   StartRoom: 6
   MinRoom: 6
   MaxRoom: 7
+  AchieveObj: {fileID: 0}
