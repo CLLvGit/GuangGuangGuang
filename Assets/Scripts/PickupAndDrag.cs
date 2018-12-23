@@ -17,6 +17,7 @@ public class PickupAndDrag : MonoBehaviour {
     public GameObject[] Target = new GameObject[3]; //存储每个目标位置
     private GameObject TriggerTarget = null; //当前进入的目标位置
     public bool TriggerEnter = false;//是否进入目标位置
+    private GameObject GetToolAS;
     
 	// Use this for initialization
 	void Start () {
@@ -31,6 +32,9 @@ public class PickupAndDrag : MonoBehaviour {
         if (this.GetComponent<Rigidbody2D>() == null)
             Debug.Log("请给物体添加刚体Rigidbody2D并且禁止重力！");
         this.GetComponent<Rigidbody2D>().gravityScale = 0;
+        GetToolAS = GameObject.Find("GetToolsAudio");
+        if (GetToolAS == null)
+            Debug.Log("请放值音效组件 Prefabs/AudioSource/GetToolsAudio");
     }
     public bool EventCanTrigger() //用于在事件触发函数中调用，返回true时可以触发事件，防止在拖拽时直接触发事件
     {
@@ -81,7 +85,8 @@ public class PickupAndDrag : MonoBehaviour {
         if(this.GetComponent<SpriteRenderer>())
             this.GetComponent<SpriteRenderer>().sortingLayerName = "popup";
         PickThis();
-        
+        if(GetToolAS != null)
+            GetToolAS.GetComponent<AudioSource>().Play();
     }
 
     private void OnMouseDrag()
